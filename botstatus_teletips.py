@@ -39,7 +39,7 @@ async def main_teletips():
                         for ccc in zzz_teletips:
                             bbb = ccc.message_id
                         if aaa == bbb:
-                            xxx_teletips += f"\n\n🤖 **BOT**: @{bot}\n🔴 **STATUS**: down ❌"
+                            xxx_teletips += f"\n\n🤖 **BOT**: @{bot}\n🔴 **STATUS**: Down ❌"
                             for bot_admin_id in BOT_ADMIN_IDS:
                                 try:
                                     await app.send_message(int(bot_admin_id), f"🚨 **Beep! Beep!! @{bot} is down** ❌")
@@ -47,13 +47,13 @@ async def main_teletips():
                                     pass
                             await app.read_history(bot)
                         else:
-                            xxx_teletips += f"\n\n🤖 **BOT**: @{bot}\n🟢 **STATUS**: alive ✅"
+                            xxx_teletips += f"\n\n🤖 **BOT**: @{bot}\n🟢 **STATUS**: Alive ✅"
                             await app.read_history(bot)
                     except FloodWait as e:
                         await asyncio.sleep(e.x)            
                 time = datetime.datetime.now(pytz.timezone(f"{TIME_ZONE}"))
                 last_update = time.strftime(f"%d %b %Y at %I:%M %p")
-                xxx_teletips += f"\n\n✔️ Last checked on: {last_update} ({TIME_ZONE})\n\n<i>♻️ Updates every 45min - Powered by Powerful Bot Status</i>"
+                xxx_teletips += f"\n\n✔️ Last checked on: {last_update} ({TIME_ZONE})\n\n<i>♻️ Updates every 45 min - Powered by @Yoga_CIC.</i>"
                 await app.edit_message_text(int(CHANNEL_OR_GROUP_ID), MESSAGE_ID, xxx_teletips)
                 print(f"Last checked on: {last_update}")                
                 await asyncio.sleep(2700)
