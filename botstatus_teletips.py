@@ -54,7 +54,7 @@ async def main_teletips():
                 time = datetime.datetime.now(pytz.timezone(f"{TIME_ZONE}"))
                 last_update = time.strftime(f"%d %b %Y at %I:%M %p")
                 xxx_teletips += "\n\n**🤖 More Bots:**\n@zUnzipBot\n@TgraBot\n@MrZackBot\n@YuKaYaBot\n@AlterPendragonBot\n@AsunaDevRobot\n@NekopoiHenBot"
-                xxx_teletips += f"\n\n✔️ Last checked on: {last_update} ({TIME_ZONE})\n\n<i>♻️ Auto updates every 24 hours.\nPowered by @Yoga_CIC.</i>"
+                xxx_teletips += f"\n\n✔️ Last checked on: {last_update} ({TIME_ZONE})\n\n<i>♻️ Auto updates every 24 hours,\n🧑‍💻 Powered by @Yoga_CIC.</i>"
                 await app.edit_message_text(int(CHANNEL_OR_GROUP_ID), MESSAGE_ID, xxx_teletips)
                 print(f"Last checked on: {last_update}")                
                 await asyncio.sleep(86400)
