@@ -23,8 +23,8 @@ MESSAGE_ID = int(os.environ["MESSAGE_ID"])
 BOT_ADMIN_IDS = [int(i.strip()) for i in os.environ.get("BOT_ADMIN_IDS").split(' ')]
 
 MORE = """
-\n\n**📊 <u>MORE BOTS:</u>**\n
-• @AlterPendragonBot
+\n\n**📊 <u>MORE BOTS:</u>**
+\n• @AlterPendragonBot
 • @AsunaDevRobot
 • @Mio_Probot
 • @MrZackBot
