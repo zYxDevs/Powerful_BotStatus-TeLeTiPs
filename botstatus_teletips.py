@@ -24,7 +24,8 @@ BOT_ADMIN_IDS = [int(i.strip()) for i in os.environ.get("BOT_ADMIN_IDS").split('
 
 MORE = """
 \n\n**📊 <u>MORE BOTS:</u>**
-\n• @HitagiRobot
+
+• @HitagiRobot
 • @Mio_Probot
 • @MuadzinRobot
 • @NekopoiHenBot
