@@ -23,11 +23,10 @@ MESSAGE_ID = int(os.environ["MESSAGE_ID"])
 BOT_ADMIN_IDS = [int(i.strip()) for i in os.environ.get("BOT_ADMIN_IDS").split(' ')]
 
 MORE = """
-\n\n**📊 <u>MORE BOTS:</u>**
+\n\n📊 **MORE BOTS:**
 
 • @HitagiRobot
 • @Mio_Probot
-• @MuadzinRobot
 • @NekopoiHenBot
 • @PHPBinBot
 • @TgraBot
@@ -36,16 +35,20 @@ MORE = """
 • @YuitoRobot
 • @YuKaYaBot
 • @zUnzipBot
+
+**LEGENDS:**
+🟢 Online
+🔴 Offline
 """
 
 async def main_teletips():
     async with app:
             while True:
                 print("Checking...")
-                GET_CHANNEL_OR_GROUP = await app.get_chat(int(CHANNEL_OR_GROUP_ID))
-                CHANNEL_OR_GROUP_NAME = GET_CHANNEL_OR_GROUP.title
-                CHANNEL_OR_GROUP_TYPE = GET_CHANNEL_OR_GROUP.type
-                xxx_teletips = f"📊 **<u>YOGA BOT STATUS</u>**\n\n**💬 Channel**: Spread Networks" #{CHANNEL_OR_GROUP_TYPE}**: {CHANNEL_OR_GROUP_NAME}"
+                # GET_CHANNEL_OR_GROUP = await app.get_chat(int(CHANNEL_OR_GROUP_ID))
+                # CHANNEL_OR_GROUP_NAME = GET_CHANNEL_OR_GROUP.title
+                # CHANNEL_OR_GROUP_TYPE = GET_CHANNEL_OR_GROUP.type
+                xxx_teletips = "📊 **BOT STATUS**\n\n"
                 for bot in BOT_LIST:
                     try:
                         yyy_teletips = await app.send_message(bot, "/start")
@@ -55,15 +58,15 @@ async def main_teletips():
                         for ccc in zzz_teletips:
                             bbb = ccc.message_id
                         if aaa == bbb:
-                            xxx_teletips += f"\n\n🤖 **BOT**: @{bot}\n🔴 **STATUS**: Offline ❌"
+                            xxx_teletips += f"\n\n• @{bot} 🔴"
                             for bot_admin_id in BOT_ADMIN_IDS:
                                 try:
-                                    await app.send_message(int(bot_admin_id), f"🚨 **Warn! @{bot} is down** ❌")
+                                    await app.send_message(int(bot_admin_id), f"🚨 **@{bot} is down.**")
                                 except Exception:
                                     pass
                             await app.read_history(bot)
                         else:
-                            xxx_teletips += f"\n\n🤖 **BOT**: @{bot}\n🟢 **STATUS**: Online ✅"
+                            xxx_teletips += f"\n\n• @{bot} 🟢"
                             await app.read_history(bot)
                     except FloodWait as e:
                         await asyncio.sleep(e.x)            
