@@ -48,7 +48,7 @@ async def main_teletips():
                 # GET_CHANNEL_OR_GROUP = await app.get_chat(int(CHANNEL_OR_GROUP_ID))
                 # CHANNEL_OR_GROUP_NAME = GET_CHANNEL_OR_GROUP.title
                 # CHANNEL_OR_GROUP_TYPE = GET_CHANNEL_OR_GROUP.type
-                xxx_teletips = "📊 **BOT STATUS**\n\n"
+                xxx_teletips = "📊 **BOT STATUS**\n"
                 for bot in BOT_LIST:
                     try:
                         yyy_teletips = await app.send_message(bot, "/start")
