@@ -36,7 +36,6 @@ MORE = """
 • @YuKaYaBot
 • @zUnzipBot
 
-**LEGENDS:**
 🟢 Online
 🔴 Offline
 """
@@ -48,7 +47,7 @@ async def main_teletips():
                 # GET_CHANNEL_OR_GROUP = await app.get_chat(int(CHANNEL_OR_GROUP_ID))
                 # CHANNEL_OR_GROUP_NAME = GET_CHANNEL_OR_GROUP.title
                 # CHANNEL_OR_GROUP_TYPE = GET_CHANNEL_OR_GROUP.type
-                xxx_teletips = "📊 **BOT STATUS**\n"
+                xxx_teletips = "📊 **BOT STATUS:**\n"
                 for bot in BOT_LIST:
                     try:
                         yyy_teletips = await app.send_message(bot, "/start")
@@ -73,10 +72,10 @@ async def main_teletips():
                 time = datetime.datetime.now(pytz.timezone(f"{TIME_ZONE}"))
                 last_update = time.strftime(f"%d %b %Y at %I:%M %p")
                 xxx_teletips += MORE
-                xxx_teletips += f"\n✔️ Last checked on: {last_update} ({TIME_ZONE})\n\n<i>♻️ Auto updates every 24 hours,\n🧑‍💻 Powered by @Yoga_CIC.</i>"
+                xxx_teletips += f"\n✔️ Last checked on: {last_update} ({TIME_ZONE})\n\n<i>♻️ Auto updates every 12 hours,\n🧑‍💻 Powered by @Yoga_CIC.</i>"
                 await app.edit_message_text(int(CHANNEL_OR_GROUP_ID), MESSAGE_ID, xxx_teletips)
                 print(f"Last checked on: {last_update}")                
-                await asyncio.sleep(86400)
+                await asyncio.sleep(43200)
                         
 app.run(main_teletips())
 
